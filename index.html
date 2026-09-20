@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LaptopPro – Power Your Potential</title>
+<meta name="description" content="LaptopPro – premium laptops and accessories. Quality, trust and performance guaranteed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1a5cff;
+  --blue-dark:#0f45d6;
+  --navy:#0a1330;
+  --navy-2:#0e1a40;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --line:#e6eaf3;
+  --soft:#eef2ff;
+  --bg:#ffffff;
+  --radius:10px;
+  --shadow:0 2px 10px rgba(15,23,42,.06);
+  --container:1320px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+.container{max-width:var(--container);margin:0 auto;padding:0 32px}
+
+/* ---------- Top bar ---------- */
+.topbar{background:var(--navy);color:#e8ecf8;font-size:12.5px}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;height:40px;gap:20px}
+.topbar .item{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.topbar .item .i{font-size:14px}
+.topbar .right{display:flex;gap:0}
+.topbar .right a{padding:0 14px;position:relative}
+.topbar .right a+a:before{content:"";position:absolute;left:0;top:3px;bottom:3px;width:1px;background:rgba(255,255,255,.25)}
+.topbar .right a:last-child{padding-right:0}
+.topbar a:hover{color:#fff;text-decoration:underline}
+
+/* ---------- Header ---------- */
+.header{background:#fff}
+.header .container{display:flex;align-items:center;gap:36px;height:88px}
+.logo{display:flex;align-items:center;gap:10px;flex:none}
+.logo .mark{font-size:44px;color:var(--ink)}
+.logo .mark .i{stroke-width:1.6}
+.logo .txt{display:flex;flex-direction:column;line-height:1.1}
+.logo .txt b{font-size:25px;font-weight:800;letter-spacing:-.4px}
+.logo .txt b span{color:var(--blue)}
+.logo .txt small{font-size:11px;color:#334155;margin-top:3px;font-weight:500}
+.search{flex:1;max-width:600px;display:flex;height:46px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#f6f7fa}
+.search input{flex:1;min-width:0;border:0;background:transparent;padding:0 18px;font-size:13.5px;outline:none}
+.search input::placeholder{color:#8792a5}
+.search .cat{display:flex;align-items:center;gap:8px;padding:0 16px;border-left:1px solid var(--line);font-size:12.5px;color:#334155;white-space:nowrap}
+.search .cat .i{font-size:14px}
+.search button{width:58px;background:var(--blue);color:#fff;font-size:20px;display:grid;place-items:center;transition:background .15s}
+.search button:hover{background:var(--blue-dark)}
+.actions{margin-left:auto;display:flex;gap:26px}
+.act{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11.5px;color:#334155;position:relative;padding:4px 2px}
+.act .i{font-size:24px;color:var(--ink);stroke-width:1.6}
+.act:hover{color:var(--blue)}.act:hover .i{color:var(--blue)}
+.act .badge{position:absolute;top:-2px;right:-3px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;width:17px;height:17px;border-radius:50%;display:grid;place-items:center}
+.act.on .i{fill:#ef4444;stroke:#ef4444}
+
+/* ---------- Nav ---------- */
+.nav{background:#fff;border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;gap:44px;height:56px}
+.shopcat{display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;height:40px;padding:0 20px;border-radius:6px;font-size:12.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;width:262px;flex:none}
+.shopcat .i{font-size:16px}
+.nav ul{display:flex;gap:38px;height:100%;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav li a{height:100%;display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;text-transform:uppercase;white-space:nowrap;position:relative;letter-spacing:.2px}
+.nav li a .i{font-size:13px}
+.nav li a.active,.nav li a:hover{color:var(--blue)}
+.nav li a.active:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--blue)}
+
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(100deg,#eceffb 0%,#f3f4fc 45%,#e9edfb 100%);position:relative;overflow:hidden}
+.hero .container{position:relative;min-height:530px;display:flex;flex-direction:column;justify-content:center}
+.hero .copy{max-width:640px;padding:56px 0 110px;position:relative;z-index:2}
+.hero .eyebrow{font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.4px;margin-bottom:12px}
+.hero h1{font-size:clamp(30px,3.6vw,50px);line-height:1.12;font-weight:800;letter-spacing:-1.2px}
+.hero h1 span{color:var(--blue);display:block;white-space:nowrap}
+.hero p{margin-top:22px;font-size:15px;color:#1e293b;max-width:400px;line-height:1.6}
+.btns{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:14px;height:46px;padding:0 26px;border-radius:5px;font-size:12.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:.15s}
+.btn .i{font-size:16px}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-dark)}
+.btn.ghost{border:1px solid var(--blue);color:var(--blue);background:rgba(255,255,255,.5)}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.hero .art{position:absolute;right:-30px;top:24px;width:58%;max-width:820px;z-index:1;pointer-events:none}
+.hero .art svg{width:100%;height:auto;display:block;overflow:visible}
+.off-badge{position:absolute;right:48px;top:0;width:118px;height:118px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:3;
+  border:1.5px dashed #9db6f5;outline:6px solid rgba(255,255,255,.7);outline-offset:-1px;box-shadow:0 8px 24px rgba(26,92,255,.12)}
+.off-badge small{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.5px}
+.off-badge b{font-size:40px;line-height:1;font-weight:800;color:var(--blue);letter-spacing:-1px}
+.off-badge b sup{font-size:.55em;vertical-align:baseline;font-weight:700}
+.trust{position:absolute;left:32px;right:32px;bottom:22px;display:flex;gap:44px;z-index:2;flex-wrap:wrap}
+.trust div{display:flex;align-items:center;gap:10px;font-size:11.5px;line-height:1.3;color:#475569}
+.trust b{display:block;color:var(--ink);font-weight:600}
+.trust .i{font-size:26px;color:var(--blue);stroke-width:1.5}
+
+/* ---------- Section heading ---------- */
+.sec-title{font-size:15px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;text-align:center}
+section{padding:0}
+
+/* ---------- Categories ---------- */
+.cats{padding:34px 0 0}
+.cat-wrap{position:relative;margin-top:22px}
+.cat-row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 2px 8px;scroll-behavior:smooth}
+.cat-row::-webkit-scrollbar{display:none}
+.cat-card{flex:0 0 calc((100% - 5*16px)/6);min-width:160px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 10px 14px;text-align:center;box-shadow:var(--shadow);transition:.15s}
+.cat-card:hover{border-color:#bcd0ff;transform:translateY(-2px)}
+.cat-card .pic{height:74px;display:flex;align-items:center;justify-content:center}
+.cat-card .pic svg{height:100%;width:auto;max-width:100%}
+.cat-card h3{font-size:11.5px;font-weight:700;margin-top:10px}
+.cat-card p{font-size:10.5px;color:var(--muted);margin-top:2px}
+.cat-next{position:absolute;right:-16px;top:50%;transform:translateY(-58%);width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 4px 12px rgba(15,23,42,.12);display:grid;place-items:center;font-size:16px;z-index:2}
+.cat-next:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* ---------- Deals banner ---------- */
+.deals{margin-top:34px}
+.deal-box{display:grid;grid-template-columns:1.05fr 1.15fr 1.25fr auto;align-items:center;gap:20px;min-height:150px;padding:0 32px 0 40px;border-radius:14px;color:#fff;overflow:hidden;position:relative;
+  background:radial-gradient(60% 120% at 38% 55%,#1a2a6a 0%,rgba(10,19,48,0) 70%),linear-gradient(90deg,#0a1230,#0b1533 60%,#0a1230);border:1px solid #1b2a5c}
+.deal-copy .tag{font-size:10.5px;font-weight:600;color:#4d86ff;text-transform:uppercase;letter-spacing:.4px}
+.deal-copy h2{font-size:clamp(22px,2.3vw,32px);line-height:1.15;font-weight:800;margin:8px 0 8px;letter-spacing:-.5px}
+.deal-copy h2 span{color:#2f6bff}
+.deal-copy p{font-size:12px;color:#c5cde6;max-width:250px;line-height:1.5}
+.deal-copy .btn{height:36px;padding:0 18px;font-size:11px;margin-top:16px;gap:10px}
+.deal-art{align-self:stretch;display:flex;align-items:center;justify-content:center;position:relative}
+.deal-art svg{width:100%;max-width:340px;height:auto;overflow:visible}
+.brands{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 16px;align-items:center;justify-items:center}
+.brands span{display:flex;align-items:center;justify-content:center;height:40px;color:#fff;white-space:nowrap}
+.brands .lenovo{font-weight:600;font-size:22px;letter-spacing:-.5px}
+.brands .asus{font-weight:800;font-style:italic;font-size:22px;letter-spacing:-1px}
+.brands .acer{font-weight:600;font-style:italic;font-size:26px;letter-spacing:-1px}
+.brands .msi{font-weight:800;font-style:italic;font-size:22px;letter-spacing:.5px;gap:6px}
+.brand-c{width:42px;height:42px;border-radius:50%;border:2.5px solid #fff;display:grid!important;place-items:center;font-weight:800;font-size:9.5px;letter-spacing:.4px}
+.brand-c.hp{width:44px;height:44px;font-size:21px;font-style:italic;font-weight:800;letter-spacing:-1px;text-transform:lowercase}
+.deal-off{border-left:1px solid rgba(255,255,255,.2);padding-left:32px;text-align:center;min-width:150px}
+.deal-off small{font-size:11px;font-weight:600;letter-spacing:.4px;display:block}
+.deal-off b{display:block;font-size:56px;line-height:1;color:#2f6bff;font-weight:800;letter-spacing:-2px}
+.deal-off b sup{font-size:.5em;vertical-align:baseline;font-weight:700}
+.deal-off em{display:block;font-style:normal;font-size:11px;margin:4px 0 8px;font-weight:600}
+.deal-off span{font-size:11px;color:#c5cde6}
+
+/* ---------- Popular laptops ---------- */
+.popular{margin-top:34px}
+.pop-head{display:flex;justify-content:space-between;align-items:center}
+.pop-head h2{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.2px}
+.pop-head a{font-size:11.5px;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:6px;text-transform:uppercase}
+.pop-head a:hover{text-decoration:underline}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 14px 14px;box-shadow:var(--shadow);position:relative;transition:.15s}
+.card:hover{border-color:#bcd0ff;box-shadow:0 8px 24px rgba(26,92,255,.1)}
+.card .pic{height:108px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.card .pic svg{height:100%;width:auto;max-width:100%}
+.card .dash{display:block;width:8px;height:2px;background:#94a3b8;margin-bottom:6px}
+.card h3{font-size:12.5px;font-weight:700}
+.card .spec{font-size:10.5px;color:var(--muted);margin-top:3px}
+.price{display:flex;align-items:baseline;gap:7px;margin-top:9px}
+.price b{font-size:15px;font-weight:800}
+.price s{font-size:10.5px;color:#94a3b8}
+.rate-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.stars{display:flex;align-items:center;gap:1px;color:#f5a623;font-size:12px}
+.stars .i{fill:currentColor;stroke:none;width:12px;height:12px}
+.stars .half{position:relative}
+.stars small{color:#64748b;font-size:10px;margin-left:5px}
+.add{width:30px;height:30px;border:1px solid #cfd6e4;border-radius:6px;display:grid;place-items:center;font-size:16px;color:#334155;transition:.15s}
+.add:hover,.add.done{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* ---------- Why choose ---------- */
+.why{margin-top:34px}
+.why-box{margin-top:16px;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);background:#fff}
+.why-item{display:flex;align-items:center;gap:14px;padding:18px 20px}
+.why-item+.why-item{border-left:1px solid var(--line)}
+.why-ic{width:44px;height:44px;border-radius:50%;background:#eaf0ff;color:var(--blue);display:grid;place-items:center;font-size:22px;flex:none}
+.why-item h4{font-size:11.5px;font-weight:700}
+.why-item p{font-size:10.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+
+/* ---------- Footer ---------- */
+.footer-wrap{margin-top:34px;padding-bottom:24px}
+.footer{background:linear-gradient(180deg,#0a1230,#080f27);color:#fff;border-radius:12px;overflow:hidden}
+.news{display:flex;align-items:center;gap:20px;padding:28px 40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.news .mail{font-size:52px;color:var(--blue);stroke-width:1.3}
+.news .t small{font-size:10px;font-weight:600;color:#4d86ff;text-transform:uppercase;letter-spacing:.4px}
+.news .t h3{font-size:20px;font-weight:800;line-height:1.2;margin:2px 0 4px}
+.news .t p{font-size:11.5px;color:#c5cde6}
+.news form{margin-left:auto;display:flex;width:min(56%,690px);height:48px;border-radius:6px;overflow:hidden;background:#fff}
+.news input{flex:1;min-width:0;border:0;padding:0 20px;color:var(--ink);font-size:13px;outline:none}
+.news input::placeholder{color:#8792a5}
+.news form button{background:var(--blue);color:#fff;padding:0 42px;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;transition:.15s}
+.news form button:hover{background:var(--blue-dark)}
+.news-msg{font-size:12px;color:#7fe0a5;margin-left:auto;display:none}
+.fcols{display:grid;grid-template-columns:1.5fr .9fr 1.1fr 1.1fr 1.3fr 1.2fr;gap:24px;padding:32px 40px 28px}
+.fcols .logo .mark{color:#fff;font-size:38px}
+.fcols .logo .txt b{font-size:22px}
+.fcols .logo .txt small{color:#c5cde6}
+.fbrand p{font-size:10.5px;color:#c5cde6;line-height:1.6;margin:14px 0 18px;max-width:200px}
+.social{display:flex;gap:20px;font-size:15px}
+.social a:hover{color:#4d86ff}
+.fcol h5{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:14px}
+.fcol li{font-size:10.5px;color:#c5cde6;margin-bottom:8px}
+.fcol li a:hover{color:#fff;text-decoration:underline}
+.contact li{display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+.contact li .i{font-size:12px;margin-top:3px;color:#fff}
+.pay{display:grid;grid-template-columns:repeat(3,52px);gap:8px}
+.pay span{height:34px;border-radius:5px;background:#fff;display:grid;place-items:center;font-size:10px;font-weight:800;color:#1a1f71}
+.pay .mc{position:relative}
+.pay .mc:before,.pay .mc:after{content:"";position:absolute;width:15px;height:15px;border-radius:50%;top:9.5px}
+.pay .mc:before{left:11px;background:#eb001b}
+.pay .mc:after{left:22px;background:#f79e1b;opacity:.9}
+.pay .amx{background:#2e8bea;color:#fff;font-size:8px;letter-spacing:.2px}
+.pay .pp{color:#003087;font-style:italic;font-size:11px}
+.pay .pp i{color:#009cde;font-style:italic}
+.pay .ap{color:#000;font-size:10.5px}
+.pay .gp{color:#5f6368;font-size:10.5px}
+.pay .gp b{color:#4285f4}
+.copy-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.1);padding:14px 40px;font-size:10.5px;color:#c5cde6}
+.copy-row .mid{position:absolute;left:50%;transform:translateX(-50%)}
+.copy-row{position:relative}
+.copy-row a:hover{color:#fff;text-decoration:underline}
+.copy-row .links{margin-left:auto;display:flex;gap:0}
+.copy-row .links a+a{margin-left:12px;padding-left:12px;border-left:1px solid rgba(255,255,255,.3)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1200px){
+  .header .container{gap:22px}
+  .actions{gap:16px}
+  .nav .container{gap:24px}
+  .shopcat{width:210px}
+  .nav ul{gap:24px}
+  .grid5{grid-template-columns:repeat(3,1fr)}
+  .why-box{grid-template-columns:repeat(3,1fr)}
+  .why-item:nth-child(4){border-left:0}
+  .why-item:nth-child(n+4){border-top:1px solid var(--line)}
+  .deal-box{grid-template-columns:1fr 1fr;padding:28px}
+  .deal-off{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,.2);padding-top:18px;grid-column:1/-1;display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .deal-off b{font-size:44px}
+  .fcols{grid-template-columns:repeat(3,1fr)}
+  .news{flex-wrap:wrap}
+  .news form{width:100%;margin-left:0}
+}
+@media (max-width:960px){
+  .container{padding:0 20px}
+  .topbar .mid1,.topbar .mid2{display:none}
+  .topbar .container{justify-content:space-between}
+  .header .container{flex-wrap:wrap;height:auto;padding-top:14px;padding-bottom:14px;row-gap:12px}
+  .search{order:3;flex:1 1 100%;max-width:none}
+  .actions{margin-left:auto}
+  .act span.lbl{display:none}
+  .nav .container{gap:14px}
+  .shopcat{width:auto;flex:none}
+  .shopcat span{display:none}
+  .shopcat{padding:0 12px}
+  .hero .container{min-height:0}
+  .hero .copy{padding:36px 0 20px;max-width:none}
+  .hero .art{position:relative;right:auto;top:auto;width:100%;max-width:560px;margin:0 auto}
+  .off-badge{right:12px;top:-6px;width:88px;height:88px}
+  .off-badge b{font-size:30px}
+  .trust{position:static;padding:8px 0 26px;gap:18px 26px}
+  .cat-next{right:-6px}
+  .cat-card{flex-basis:150px}
+}
+@media (max-width:640px){
+  .grid5{grid-template-columns:repeat(2,1fr)}
+  .why-box{grid-template-columns:1fr}
+  .why-item+.why-item{border-left:0;border-top:1px solid var(--line)}
+  .deal-box{grid-template-columns:1fr}
+  .brands{grid-template-columns:repeat(3,1fr)}
+  .fcols{grid-template-columns:1fr 1fr;padding:28px 24px}
+  .fbrand{grid-column:1/-1}
+  .news{padding:24px}
+  .news form{flex-direction:column;height:auto;background:none;gap:10px}
+  .news input{height:46px;border-radius:6px;background:#fff}
+  .news form button{height:46px;border-radius:6px}
+  .copy-row{flex-direction:column;gap:8px;padding:14px 24px}
+  .copy-row .mid{position:static;transform:none}
+  .copy-row .links{margin-left:0}
+  .pop-head{gap:10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-compare" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7 5-3 5 3-1.5-7"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="4.5" width="16" height="11.5" rx="1.6"/><path d="M1.5 19.5h21"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.94 6.1 6.56.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6-4.8-4.6 6.56-.9z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+  </defs>
+</svg>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="container">
+    <div class="item mid1"><svg class="i"><use href="#i-pin"/></svg>123 Tech Street, San Francisco, CA 94107</div>
+    <div class="item mid2"><svg class="i"><use href="#i-truck"/></svg>Free Shipping on orders over $99</div>
+    <div class="item mid2"><svg class="i"><use href="#i-headset"/></svg>(415) 123-4567</div>
+    <div class="right"><a href="#">Track Order</a><a href="#">Help Center</a></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <a href="#" class="logo" aria-label="LaptopPro home">
+      <span class="mark"><svg class="i"><use href="#i-laptop"/></svg></span>
+      <span class="txt"><b>LaptopPro</b><small>Power Your Potential</small></span>
+    </a>
+    <form class="search" role="search" onsubmit="return false">
+      <input type="search" placeholder="Search laptops, brands, categories..." aria-label="Search">
+      <div class="cat">All Categories <svg class="i"><use href="#i-down"/></svg></div>
+      <button type="submit" aria-label="Search"><svg class="i"><use href="#i-search"/></svg></button>
+    </form>
+    <div class="actions">
+      <a href="#" class="act"><svg class="i"><use href="#i-compare"/></svg><span class="lbl">Compare</span></a>
+      <button class="act" id="wish" type="button" aria-pressed="false"><svg class="i"><use href="#i-heart"/></svg><span class="lbl">Wishlist</span></button>
+      <a href="#" class="act"><svg class="i"><use href="#i-cart"/></svg><span class="badge" id="cartCount">0</span><span class="lbl">Cart</span></a>
+      <a href="#" class="act"><svg class="i"><use href="#i-user"/></svg><span class="lbl">Sign In</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- Nav -->
+<nav class="nav" aria-label="Main">
+  <div class="container">
+    <a href="#" class="shopcat"><svg class="i"><use href="#i-menu"/></svg><span>Shop by Category</span></a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Laptops <svg class="i"><use href="#i-down"/></svg></a></li>
+      <li><a href="#">Brands <svg class="i"><use href="#i-down"/></svg></a></li>
+      <li><a href="#">Accessories <svg class="i"><use href="#i-down"/></svg></a></li>
+      <li><a href="#">Deals</a></li>
+      <li><a href="#">Business Store</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="copy">
+      <div class="eyebrow">New Arrival</div>
+      <h1>Powerful Laptops. <span>Limitless Possibilities.</span></h1>
+      <p>From performance to portability, find the perfect laptop that fits your life and fuels your passion.</p>
+      <div class="btns">
+        <a href="#popular" class="btn primary">Shop Now <svg class="i"><use href="#i-arrow"/></svg></a>
+        <a href="#categories" class="btn ghost">Explore Range</a>
+      </div>
+    </div>
+
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hScreen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0a1c6a"/><stop offset=".45" stop-color="#1747d8"/><stop offset="1" stop-color="#0b1a5c"/>
+          </linearGradient>
+          <linearGradient id="hBase" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#b9bfc9"/><stop offset=".5" stop-color="#e6e9ee"/><stop offset="1" stop-color="#c3c8d1"/>
+          </linearGradient>
+          <linearGradient id="hBaseFront" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f3f5f8"/><stop offset="1" stop-color="#9aa1ad"/>
+          </linearGradient>
+          <linearGradient id="hLid" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8c9098"/><stop offset="1" stop-color="#5a5e66"/>
+          </linearGradient>
+          <linearGradient id="swirl1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff7a2f"/><stop offset="1" stop-color="#ffb04a"/></linearGradient>
+          <linearGradient id="swirl2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a4dff"/><stop offset="1" stop-color="#3fa2ff"/></linearGradient>
+          <clipPath id="hClip"><polygon points="196,86 596,20 566,296 178,326"/></clipPath>
+          <radialGradient id="floor"><stop offset="0" stop-color="#5b6ea8" stop-opacity=".35"/><stop offset="1" stop-color="#5b6ea8" stop-opacity="0"/></radialGradient>
+        </defs>
+
+        <!-- floor reflection -->
+        <ellipse cx="520" cy="420" rx="360" ry="34" fill="url(#floor)"/>
+
+        <!-- back laptop lid -->
+        <g>
+          <polygon points="520,190 880,300 872,388 540,400" fill="url(#hLid)"/>
+          <polygon points="520,190 880,300 872,312 526,204" fill="#a4a8b0" opacity=".7"/>
+          <circle cx="700" cy="292" r="13" fill="none" stroke="#3f434a" stroke-width="3"/>
+          <circle cx="700" cy="292" r="5" fill="#3f434a"/>
+        </g>
+
+        <!-- main laptop: screen -->
+        <polygon points="186,80 604,14 574,304 168,336" fill="#171a20"/>
+        <g clip-path="url(#hClip)">
+          <polygon points="196,86 596,20 566,296 178,326" fill="url(#hScreen)"/>
+          <path d="M170 300 C 260 200, 330 260, 420 180 S 560 60, 620 90" stroke="url(#swirl1)" stroke-width="34" fill="none" opacity=".95" stroke-linecap="round"/>
+          <path d="M180 330 C 280 240, 380 290, 470 220 S 590 130, 640 170" stroke="url(#swirl2)" stroke-width="26" fill="none" opacity=".9" stroke-linecap="round"/>
+          <path d="M200 120 C 300 170, 360 100, 450 130 S 560 90, 610 60" stroke="#ff5aa8" stroke-width="16" fill="none" opacity=".75" stroke-linecap="round"/>
+          <path d="M190 220 C 280 150, 350 210, 430 140" stroke="#ffd18a" stroke-width="8" fill="none" opacity=".7" stroke-linecap="round"/>
+          <polygon points="196,86 596,20 566,296 178,326" fill="#fff" opacity=".04"/>
+        </g>
+
+        <!-- main laptop: base -->
+        <polygon points="168,336 574,304 640,344 118,384" fill="url(#hBase)"/>
+        <polygon points="118,384 640,344 636,356 128,398" fill="url(#hBaseFront)"/>
+        <polygon points="322,362 456,352 462,358 328,368" fill="#8b929e" opacity=".8"/>
+        <polygon points="182,340 566,309 620,342 138,378" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
+        <!-- hinge highlight -->
+        <polygon points="168,336 574,304 576,310 170,343" fill="#585c65"/>
+      </svg>
+      <div class="off-badge"><small>UP TO</small><b>25<sup>%</sup></b><small>OFF</small></div>
+    </div>
+
+    <div class="trust">
+      <div><svg class="i"><use href="#i-shield"/></svg><span><b>100%</b>Authentic Products</span></div>
+      <div><svg class="i"><use href="#i-truck"/></svg><span><b>Free Shipping</b>On orders over $99</span></div>
+      <div><svg class="i"><use href="#i-return"/></svg><span><b>Easy Returns</b>30-Day Return</span></div>
+      <div><svg class="i"><use href="#i-lock"/></svg><span><b>Secure Payment</b>100% Safe &amp; Secure</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="cats" id="categories">
+  <div class="container">
+    <h2 class="sec-title">Shop by Category</h2>
+    <div class="cat-wrap">
+      <div class="cat-row" id="catRow"></div>
+      <button class="cat-next" id="catNext" type="button" aria-label="Next categories"><svg class="i"><use href="#i-right"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- Deals -->
+<section class="deals">
+  <div class="container">
+    <div class="deal-box">
+      <div class="deal-copy">
+        <div class="tag">Limited Time Offer</div>
+        <h2>Best Deals on<br>Top <span>Brands</span></h2>
+        <p>Grab exciting offers on premium laptops from leading brands.</p>
+        <a href="#popular" class="btn primary">View All Deals <svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="deal-art" aria-hidden="true">
+        <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855ff"/><stop offset=".5" stop-color="#5b7bff"/><stop offset="1" stop-color="#3fd0ff"/></linearGradient>
+            <linearGradient id="dScreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1b6e"/><stop offset=".55" stop-color="#3b3fe0"/><stop offset="1" stop-color="#7b3fe4"/></linearGradient>
+            <linearGradient id="dBase" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3f55"/><stop offset="1" stop-color="#15182a"/></linearGradient>
+            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+          </defs>
+          <ellipse cx="170" cy="108" rx="150" ry="86" fill="none" stroke="url(#ring)" stroke-width="7" opacity=".9" filter="url(#glow)" transform="rotate(-12 170 108)"/>
+          <ellipse cx="170" cy="108" rx="150" ry="86" fill="none" stroke="url(#ring)" stroke-width="2.5" transform="rotate(-12 170 108)"/>
+          <ellipse cx="170" cy="112" rx="130" ry="72" fill="none" stroke="#7a8dff" stroke-width="1" opacity=".5" transform="rotate(-12 170 112)"/>
+          <polygon points="66,36 250,20 256,132 62,142" fill="#0b0d14" stroke="#2a2f45" stroke-width="1.5"/>
+          <polygon points="72,42 244,27 249,126 68,135" fill="url(#dScreen)"/>
+          <path d="M72 120 C 120 80, 160 110, 210 70 S 240 50, 246 60" stroke="#8ea2ff" stroke-width="10" fill="none" opacity=".6" stroke-linecap="round"/>
+          <path d="M70 100 C 130 60, 170 90, 230 40" stroke="#e06bff" stroke-width="6" fill="none" opacity=".6" stroke-linecap="round"/>
+          <polygon points="48,146 272,132 290,150 44,164" fill="url(#dBase)"/>
+          <polygon points="44,164 290,150 289,154 47,169" fill="#0a0c14"/>
+        </svg>
+      </div>
+
+      <div class="brands" aria-label="Featured brands">
+        <span><i class="brand-c">DELL</i></span>
+        <span><i class="brand-c hp">hp</i></span>
+        <span class="lenovo">Lenovo</span>
+        <span class="asus">ASUS</span>
+        <span class="acer">acer</span>
+        <span class="msi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"><path d="M12 3 3 8v8l9 5 9-5V8z"/><path d="M12 8l-4 2.5v3L12 16l4-2.5v-3z" fill="#fff"/></svg>msi</span>
+      </div>
+
+      <div class="deal-off">
+        <small>UP TO</small>
+        <b>30<sup>%</sup></b>
+        <em>OFF</em>
+        <span>On Selected Laptops</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Popular laptops -->
+<section class="popular" id="popular">
+  <div class="container">
+    <div class="pop-head">
+      <h2>Popular Laptops</h2>
+      <a href="#">View All Products <svg class="i"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="grid5" id="products"></div>
+  </div>
+</section>
+
+<!-- Why choose -->
+<section class="why">
+  <div class="container">
+    <h2 class="sec-title">Why Choose LaptopPro?</h2>
+    <div class="why-box">
+      <div class="why-item"><span class="why-ic"><svg class="i"><use href="#i-shield"/></svg></span><div><h4>Best Price Guarantee</h4><p>We offer the best prices on top brands.</p></div></div>
+      <div class="why-item"><span class="why-ic"><svg class="i"><use href="#i-user"/></svg></span><div><h4>Expert Support</h4><p>Get help from our product specialists anytime.</p></div></div>
+      <div class="why-item"><span class="why-ic"><svg class="i"><use href="#i-return"/></svg></span><div><h4>Hassle-Free Returns</h4><p>30-day easy returns for peace of mind.</p></div></div>
+      <div class="why-item"><span class="why-ic"><svg class="i"><use href="#i-lock"/></svg></span><div><h4>Secure Payments</h4><p>Safe &amp; secure payment methods.</p></div></div>
+      <div class="why-item"><span class="why-ic"><svg class="i"><use href="#i-shield"/></svg></span><div><h4>Extended Warranty</h4><p>Premium protection for your laptop.</p></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<div class="footer-wrap">
+  <div class="container">
+    <footer class="footer">
+      <div class="news">
+        <svg class="i mail"><use href="#i-mail"/></svg>
+        <div class="t">
+          <small>Stay Updated</small>
+          <h3>Subscribe to Our Newsletter</h3>
+          <p>Get the latest deals, new arrivals, and exclusive offers.</p>
+        </div>
+        <form id="newsForm" novalidate>
+          <input type="email" id="newsEmail" placeholder="Enter your email address" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="news-msg" id="newsMsg" role="status"></p>
+      </div>
+
+      <div class="fcols">
+        <div class="fbrand">
+          <a href="#" class="logo"><span class="mark"><svg class="i"><use href="#i-laptop"/></svg></span><span class="txt"><b>LaptopPro</b><small>Power Your Potential</small></span></a>
+          <p>Your one-stop destination for premium laptops and accessories. Quality, trust, and performance guaranteed.</p>
+          <div class="social">
+            <a href="#" aria-label="Facebook"><svg class="i"><use href="#i-fb"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg class="i"><use href="#i-ig"/></svg></a>
+            <a href="#" aria-label="X"><svg class="i"><use href="#i-x"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg class="i"><use href="#i-yt"/></svg></a>
+          </div>
+        </div>
+        <div class="fcol"><h5>Quick Links</h5>
+          <ul><li><a href="#">Home</a></li><li><a href="#">Shop</a></li><li><a href="#">Brands</a></li><li><a href="#">Deals</a></li><li><a href="#">About Us</a></li><li><a href="#">Contact Us</a></li></ul>
+        </div>
+        <div class="fcol"><h5>Customer Service</h5>
+          <ul><li><a href="#">Track Order</a></li><li><a href="#">Shipping &amp; Delivery</a></li><li><a href="#">Returns &amp; Refunds</a></li><li><a href="#">Warranty</a></li><li><a href="#">FAQs</a></li><li><a href="#">Help Center</a></li></ul>
+        </div>
+        <div class="fcol"><h5>Shop by Category</h5>
+          <ul><li><a href="#">Ultrabooks</a></li><li><a href="#">Gaming Laptops</a></li><li><a href="#">Business Laptops</a></li><li><a href="#">2-in-1 Laptops</a></li><li><a href="#">Student Laptops</a></li><li><a href="#">Workstations</a></li></ul>
+        </div>
+        <div class="fcol contact"><h5>Contact Us</h5>
+          <ul>
+            <li><svg class="i"><use href="#i-pin"/></svg><span>123 Tech Street,<br>San Francisco, CA 94107</span></li>
+            <li><svg class="i"><use href="#i-phone"/></svg><span>(415) 123-4567</span></li>
+            <li><svg class="i"><use href="#i-mail"/></svg><span>support@laptoppro.com</span></li>
+          </ul>
+        </div>
+        <div class="fcol"><h5>We Accept</h5>
+          <div class="pay">
+            <span>VISA</span><span class="mc"></span><span class="amx">AMEX</span>
+            <span class="pp">Pay<i>Pal</i></span><span class="ap">&#63743;Pay</span><span class="gp"><b>G</b> Pay</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="copy-row">
+        <span class="mid">&copy; 2024 LaptopPro. All Rights Reserved.</span>
+        <span></span>
+        <span class="links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></span>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+/* ---------- Laptop illustration generator ---------- */
+let uid = 0;
+const overlays = {
+  flower: () => {
+    let p = '';
+    for (let a = 0; a < 180; a += 22.5) p += `<ellipse cx="100" cy="54" rx="6" ry="24" fill="#6f9bff" opacity=".55" transform="rotate(${a} 100 54)"/>`;
+    return p + '<circle cx="100" cy="54" r="7" fill="#c9dbff"/>';
+  },
+  mountain: () => `<polygon points="38,80 66,54 84,70 112,42 162,88 162,94 38,94" fill="#3a4b5e"/><polygon points="38,86 70,66 100,84 130,64 162,86 162,94 38,94" fill="#26364a"/><circle cx="132" cy="30" r="8" fill="#ffe9b0" opacity=".9"/>`,
+  purple: () => `<path d="M38 80 C 70 40, 100 84, 130 50 S 156 34, 162 40 V94 H38Z" fill="#c05be6" opacity=".7"/><path d="M38 90 C 80 60, 110 90, 162 56 V94 H38Z" fill="#ff8fd0" opacity=".55"/>`,
+  win: () => `<path d="M38 94 L 100 14 L 162 14 L 162 94Z" fill="#5aa2ff" opacity=".35"/><path d="M60 94 L 118 14 L 140 14 L 108 94Z" fill="#c6e2ff" opacity=".35"/>`,
+  red: () => `<polygon points="38,94 90,26 118,26 78,94" fill="#e02b3a" opacity=".85"/><polygon points="96,94 130,40 162,40 162,94" fill="#ff5a3c" opacity=".6"/><polygon points="120,94 150,62 162,62 162,94" fill="#ffd35a" opacity=".5"/>`,
+  neon: () => `<polygon points="100,20 140,44 140,80 100,102 60,80 60,44" fill="none" stroke="#ff4fd8" stroke-width="3"/><polygon points="100,34 128,50 128,74 100,88 72,74 72,50" fill="#7a3cff" opacity=".7"/>`,
+  soft: () => `<path d="M38 70 C 80 30, 120 90, 162 44 V94 H38Z" fill="#9fd0ff" opacity=".65"/><path d="M38 84 C 90 60, 120 96, 162 70 V94 H38Z" fill="#ffffff" opacity=".35"/>`
+};
+
+function laptop(stops, ov, opts = {}) {
+  const id = ++uid;
+  const st = stops.map((c, i) => `<stop offset="${i / (stops.length - 1)}" stop-color="${c}"/>`).join('');
+  const tent = opts.tent;
+  if (tent) {
+    return `<svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="s${id}" x1="0" y1="0" x2="1" y2="1">${st}</linearGradient>
+      <linearGradient id="b${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eceff4"/><stop offset="1" stop-color="#a9b0bc"/></linearGradient>
+      <clipPath id="c${id}"><polygon points="62,20 152,14 164,84 70,94"/></clipPath></defs>
+      <ellipse cx="100" cy="112" rx="80" ry="5" fill="rgba(15,23,42,.1)"/>
+      <polygon points="58,16 156,9 170,88 66,99" fill="#15171c"/>
+      <g clip-path="url(#c${id})"><polygon points="62,20 152,14 164,84 70,94" fill="url(#s${id})"/><g transform="translate(24,4)">${overlays[ov]()}</g></g>
+      <polygon points="20,102 132,96 184,104 60,114" fill="url(#b${id})"/>
+    </svg>`;
+  }
+  return `<svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="s${id}" cx="50%" cy="65%" r="85%">${st}</radialGradient>
+      <linearGradient id="b${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eceff4"/><stop offset="1" stop-color="#a9b0bc"/></linearGradient>
+      <clipPath id="c${id}"><rect x="38" y="14" width="124" height="80" rx="2"/></clipPath>
+    </defs>
+    <ellipse cx="100" cy="117" rx="84" ry="4" fill="rgba(15,23,42,.1)"/>
+    <rect x="34" y="10" width="132" height="88" rx="5" fill="#14161b"/>
+    <rect x="38" y="14" width="124" height="80" rx="2" fill="url(#s${id})"/>
+    <g clip-path="url(#c${id})">${overlays[ov]()}</g>
+    <path d="M10 101 H190 L184 110 Q183 113 179 113 H21 Q17 113 16 110 Z" fill="url(#b${id})"/>
+    <rect x="82" y="101" width="36" height="3.5" rx="1.7" fill="#8b93a1"/>
+  </svg>`;
+}
+
+function workstation() {
+  const id = ++uid;
+  return `<svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><linearGradient id="w${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d2e8a"/><stop offset="1" stop-color="#4aa3ff"/></linearGradient></defs>
+    <ellipse cx="100" cy="120" rx="84" ry="4" fill="rgba(15,23,42,.1)"/>
+    <rect x="18" y="16" width="106" height="72" rx="4" fill="#14161b"/>
+    <rect x="22" y="20" width="98" height="62" rx="1.5" fill="url(#w${id})"/>
+    <path d="M30 70 C 55 40, 80 70, 116 32" stroke="#bfe0ff" stroke-width="6" fill="none" opacity=".5"/>
+    <polygon points="62,88 80,88 84,106 58,106" fill="#3b414d"/>
+    <rect x="46" y="106" width="50" height="4" rx="2" fill="#2a2f39"/>
+    <rect x="134" y="26" width="40" height="86" rx="4" fill="#2b303a"/>
+    <rect x="140" y="34" width="28" height="4" rx="2" fill="#0a0c10"/>
+    <rect x="140" y="42" width="28" height="4" rx="2" fill="#0a0c10"/>
+    <circle cx="154" cy="98" r="5" fill="#4d86ff"/>
+    <rect x="134" y="26" width="40" height="86" rx="4" fill="none" stroke="#4a5160" stroke-width="1"/>
+  </svg>`;
+}
+
+/* ---------- Data ---------- */
+const categories = [
+  { name: 'Ultrabooks', sub: 'Lightweight & Thin', svg: laptop(['#f7c1e8', '#9f57e0', '#241255'], 'purple') },
+  { name: 'Gaming Laptops', sub: 'High Performance', svg: laptop(['#ff6a3c', '#a01b3a', '#12030a'], 'red') },
+  { name: 'Business Laptops', sub: 'Power & Productivity', svg: laptop(['#8cc8ff', '#1f63d6', '#0a2a70'], 'win') },
+  { name: '2-in-1 Laptops', sub: 'Versatile & Flexible', svg: laptop(['#9fd0ff', '#2a68d6', '#0d2a70'], 'soft', { tent: true }) },
+  { name: 'Student Laptops', sub: 'Study Smart', svg: laptop(['#d8ecff', '#6fb0ff', '#2660c8'], 'soft') },
+  { name: 'Workstations', sub: 'Built for Professionals', svg: workstation() }
+];
+
+const products = [
+  { name: 'Apple MacBook Air M3', spec: '13.6" | 8GB | 256GB SSD', price: '1,099.00', old: '1,299.00', rate: 4.5, n: 128, svg: laptop(['#5b8cff', '#1d3fd0', '#060d3a'], 'flower') },
+  { name: 'Dell XPS 13 Plus', spec: '13.4" | 16GB | 512GB SSD', price: '1,299.00', old: '1,499.00', rate: 4.5, n: 96, svg: laptop(['#bfe0ff', '#5a86b8', '#1c2b3a'], 'mountain') },
+  { name: 'HP Spectre x360 14', spec: '14.0" | 16GB | 512GB SSD', price: '1,199.00', old: '1,399.00', rate: 4.5, n: 87, svg: laptop(['#7fa8ff', '#5a4be0', '#150d4a'], 'purple', { tent: true }) },
+  { name: 'Lenovo ThinkPad X1 Carbon', spec: '14.0" | 16GB | 512GB SSD', price: '1,249.00', old: '1,499.00', rate: 4.5, n: 74, svg: laptop(['#ff5a6a', '#8f1230', '#12050a'], 'red') },
+  { name: 'ASUS ROG Zephyrus G14', spec: '14.0" | 16GB | 1TB SSD | RTX 4060', price: '1,599.00', old: '1,899.00', rate: 4.5, n: 65, svg: laptop(['#ff6ad8', '#6a2be0', '#0d0524'], 'neon') }
+];
+
+/* ---------- Render ---------- */
+const star = '<svg class="i"><use href="#i-star"/></svg>';
+function stars(r, n) {
+  let s = '';
+  for (let i = 1; i <= 5; i++) {
+    s += r >= i ? star : (r > i - 1 ? `<span style="position:relative;display:inline-flex;width:12px;height:12px"><svg class="i" style="color:#d5dae4;position:absolute;inset:0"><use href="#i-star"/></svg><span style="position:absolute;inset:0;width:50%;overflow:hidden;display:block"><svg class="i" style="color:#f5a623;width:12px;height:12px"><use href="#i-star"/></svg></span></span>` : '<svg class="i" style="color:#d5dae4"><use href="#i-star"/></svg>');
+  }
+  return `<span class="stars" role="img" aria-label="${r} out of 5">${s}<small>(${n})</small></span>`;
+}
+
+document.getElementById('catRow').innerHTML = categories.map(c => `
+  <a href="#" class="cat-card">
+    <div class="pic">${c.svg}</div>
+    <h3>${c.name}</h3><p>${c.sub}</p>
+  </a>`).join('');
+
+document.getElementById('products').innerHTML = products.map(p => `
+  <article class="card">
+    <a href="#" class="pic" aria-label="${p.name}">${p.svg}</a>
+    <span class="dash"></span>
+    <h3>${p.name}</h3>
+    <p class="spec">${p.spec}</p>
+    <div class="price"><b>$${p.price}</b><s>$${p.old}</s></div>
+    <div class="rate-row">
+      ${stars(p.rate, p.n)}
+      <button class="add" type="button" aria-label="Add ${p.name} to cart"><svg class="i"><use href="#i-cart"/></svg></button>
+    </div>
+  </article>`).join('');
+
+/* ---------- Interactions ---------- */
+const row = document.getElementById('catRow');
+document.getElementById('catNext').addEventListener('click', () => {
+  const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 4;
+  row.scrollBy({ left: atEnd ? -row.scrollWidth : row.clientWidth * .8, behavior: 'smooth' });
+});
+
+let cart = 0;
+const badge = document.getElementById('cartCount');
+document.querySelectorAll('.add').forEach(b => b.addEventListener('click', () => {
+  if (b.classList.toggle('done')) cart++; else cart--;
+  badge.textContent = cart;
+}));
+
+const wish = document.getElementById('wish');
+wish.addEventListener('click', () => {
+  const on = wish.classList.toggle('on');
+  wish.setAttribute('aria-pressed', on);
+});
+
+document.getElementById('newsForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = document.getElementById('newsEmail');
+  const msg = document.getElementById('newsMsg');
+  msg.style.display = 'block';
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.value)) {
+    msg.style.color = '#7fe0a5';
+    msg.textContent = 'You\u2019re subscribed. Check your inbox for a confirmation.';
+    v.value = '';
+  } else {
+    msg.style.color = '#ffb4b4';
+    msg.textContent = 'Enter a valid email address, like name@example.com.';
+    v.focus();
+  }
+});
+</script>
+</body>
+</html>
